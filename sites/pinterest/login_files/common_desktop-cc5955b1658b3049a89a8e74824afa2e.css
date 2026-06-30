@@ -19284,11 +19284,9 @@ img.jcrop-preview {
 .ConversationListItem .comma {
     margin-left: -3px; }
 .ConversationListItem.collabGroupBoardView {
-    background: #fff;
-    /* TODO: better specificity once exp gating taken out */ }
+    background: #fff; }
 .ConversationListItem.collabGroupBoardView.unread {
-      background: #fff;
-      /* TODO: better specificity once exp gating taken out */ }
+      background: #fff; }
 .ConversationListItem.collabGroupBoardView.unread .lastMessageContent .subtitle {
         color: #555;
         font-weight: bold; }
