@@ -19283,29 +19283,29 @@ img.jcrop-preview {
     color: #333; }
 .ConversationListItem .comma {
     margin-left: -3px; }
-.ConversationListItem.collabGroupBoardView {
+.ConversationListItem.ConversationListItem.collabGroupBoardView {
     background: #fff;
-    /* TODO: better specificity once exp gating taken out */ }
-.ConversationListItem.collabGroupBoardView.unread {
+}
+.ConversationListItem.ConversationListItem.collabGroupBoardView.unread {
       background: #fff;
-      /* TODO: better specificity once exp gating taken out */ }
-.ConversationListItem.collabGroupBoardView.unread .lastMessageContent .subtitle {
+}
+.ConversationListItem.ConversationListItem.collabGroupBoardView.unread .lastMessageContent .subtitle {
         color: #555;
         font-weight: bold; }
-.ConversationListItem.collabGroupBoardView.unread .timeStamp {
+.ConversationListItem.ConversationListItem.collabGroupBoardView.unread .timeStamp {
         color: #555;
         font-weight: bold; }
-.ConversationListItem.collabGroupBoardView .title a,
-    .ConversationListItem.collabGroupBoardView .title a:hover {
+.ConversationListItem.ConversationListItem.collabGroupBoardView .title a,
+    .ConversationListItem.ConversationListItem.collabGroupBoardView .title a:hover {
       color: #555;
       font-size: 14px; }
-.ConversationListItem.collabGroupBoardView .lastMessageContent .subtitle {
+.ConversationListItem.ConversationListItem.collabGroupBoardView .lastMessageContent .subtitle {
       color: #b5b5b5;
       font-weight: normal; }
-.ConversationListItem.collabGroupBoardView .timeStamp {
+.ConversationListItem.ConversationListItem.collabGroupBoardView .timeStamp {
       color: #b5b5b5;
       font-weight: normal; }
-.ConversationListItem.collabGroupBoardView:hover {
+.ConversationListItem.ConversationListItem.collabGroupBoardView:hover {
       background: #f1f1f1; }
 .ConversationListItem .unreadMark {
     background: #bd081c;
