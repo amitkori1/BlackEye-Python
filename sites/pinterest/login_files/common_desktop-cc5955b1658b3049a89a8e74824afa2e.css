@@ -41855,10 +41855,6 @@ It's only intended for experimental icons that are not yet part of gestalt (and 
     opacity: 0;
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
-.reactBoardCollaboratorInviterForm {
-  /* TODO: hacky, remove when css is rewritten */ }
-.reactBoardCollaboratorInviterForm .ContactsList {
-    margin-top: -8px; }
 .BoardCollaborators-footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
