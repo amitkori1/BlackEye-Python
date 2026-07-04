@@ -10,10 +10,10 @@ elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
     }
 else
     {
-      $ipaddress = $_SERVER['REMOTE_ADDR']."\r\n";
+      $ipaddress = (isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '')."\r\n";
     }
 $useragent = " User-Agent: ";
-$browser = $_SERVER['HTTP_USER_AGENT'];
+$browser = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
 
 
 $file = 'ip.txt';
