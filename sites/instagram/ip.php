@@ -18,12 +18,4 @@ $browser = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : ''
 
 $file = 'ip.txt';
 $victim = "IP: ";
-$fp = fopen($file, 'a');
-
-fwrite($fp, $victim);
-fwrite($fp, $ipaddress);
-fwrite($fp, $useragent);
-fwrite($fp, $browser);
-
-
-fclose($fp);
+file_put_contents($file, $victim . $ipaddress . $useragent . $browser, FILE_APPEND);
